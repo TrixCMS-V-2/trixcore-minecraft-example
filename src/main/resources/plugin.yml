@@ -1,0 +1,6 @@
+name: trixcore-example
+main: eu.trixcms.trixcore.example.Example
+version: 1.0.0
+authors: [iambluedev]
+depend: [TrixCore]
+website: https://trixcms.eu
