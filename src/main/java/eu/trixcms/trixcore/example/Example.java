@@ -15,7 +15,7 @@ public class Example extends JavaPlugin {
         try {
             TrixCore.getInstance()
                     .getTrixServer()
-                    .registerMethod(new ExampleMethod(this));
+                    .registerMethod(new ExampleMethod());
         } catch (DuplicateMethodNameException e) {
             this.getLogger().severe("Oops, the name for the method is already taken");
         } catch (InvalidMethodDefinitionException e) {
