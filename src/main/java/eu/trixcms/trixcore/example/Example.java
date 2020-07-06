@@ -9,24 +9,22 @@ import org.slf4j.LoggerFactory;
 
 public class Example extends JavaPlugin {
 
-    private Logger logger = LoggerFactory.getLogger(Example.class);
-
     @Override
     public void onEnable() {
-        logger.info("Hello from example plugin !");
+        this.getLogger().info("Hello from example plugin !");
         try {
             TrixCore.getInstance()
                     .getTrixServer()
-                    .registerMethod(new ExampleMethod());
+                    .registerMethod(new ExampleMethod(this));
         } catch (DuplicateMethodNameException e) {
-            logger.error("Oops, the name for the method is already taken");
+            this.getLogger().severe("Oops, the name for the method is already taken");
         } catch (InvalidMethodDefinitionException e) {
-            logger.error("Oops, I made a mistake :o");
+            this.getLogger().severe("Oops, I made a mistake :o");
         }
     }
 
     @Override
     public void onDisable() {
-        logger.info("Bye");
+        this.getLogger().info("Bye");
     }
 }
